@@ -45,11 +45,16 @@ class User extends Authenticatable
         'name',
         'last_name',
         'email',
+        'role_id',
         'password',
     ];
-
 
     protected $hidden = [
         'password',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
